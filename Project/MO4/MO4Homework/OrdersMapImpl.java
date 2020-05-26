@@ -22,8 +22,9 @@ public class OrdersMapImpl implements Orders {
     @Override
     public void createOrder(final String orderid) {
       //idead: add an order to our map<orderif,[taco_list]>
-      List<TacoImpl> list = new ArrayList<>(); 
+      List<TacoImpl> list = new ArrayList<>();// can be declared this way //sp 
       tacoListById.put(orderid, list);
+      //this.orders.put(orderid, new ArrayList<TacoImpl>());
     }
 
     @Override
@@ -37,11 +38,13 @@ public class OrdersMapImpl implements Orders {
     	}
     	//add taco to the list
     	list.add(taco);
+    	// can be done this way this.orders.get(orderid).add(taco); //sp
     }
 
     @Override
     public boolean hasNext() {
     	return false;
+    	// need to check if empty return !this.orders.isEmpty();
     }
 
     @Override
@@ -55,6 +58,7 @@ public class OrdersMapImpl implements Orders {
     	}
     	tacoListById.remove(orderid);
     	return list;
+    	// can be done this way return this.orders.remove(orderid); //sp
     }
 
     @Override
